@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">iniciarSesion</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <article id="container">
+    <form [formGroup]="formularioLogin" (ngSubmit)="intentarLogear()">
+      <ion-item>
+        <img
+          src="https://www.pikpng.com/pngl/b/283-2837538_login-icon-line-icons-iconscout-login-icon-images.png"
+          alt="Login"
+        />
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-label position="floating"> Usuario </ion-label>
+        <ion-input type="text" formControlName="user"></ion-input>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-label position="floating"> Contraseña </ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <br />
+      <ion-toggle [checked]="true">Checked Toggle</ion-toggle>
+      <br />
+      <ion-progress-bar
+        *ngIf="auth.$cargando | async"
+        type="indeterminate"
+      ></ion-progress-bar>
+      <ion-button type="submit" expand="block">Entrar</ion-button>
+    </form>
+  </article>
+</ion-content>

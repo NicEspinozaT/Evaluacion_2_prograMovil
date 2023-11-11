@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title routerLink="/perfil-usuario"> < principal</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <!-- <ion-list>
+    <ion-item *ngFor="let p of prodServ.productos">
+      <img [src]="p.images[0]" alt="" />
+      <ion-label>{{ p.title }}</ion-label>
+      ion
+    </ion-item>
+  </ion-list> -->
+
+  <ion-card *ngFor="let p of prodServ.productos">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-thumbnail slot="start">
+            <img [src]="p.images[0]" />
+          </ion-thumbnail>
+          <ion-label>{{ p.title}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
